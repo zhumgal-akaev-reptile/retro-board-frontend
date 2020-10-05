@@ -1,0 +1,52 @@
+$primary-color: #24305E;
+$secondary-color: #F8E9A1;
+$tertiary-color: #374785;
+$ruby-color: #F76C6C;
+$oceanic-color: #A8D0E6;
+$cobalt-color: #cfd8dc;
+$blank-color: #bdbdbd;
+$lighten: 5;
+$darken: 25;
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: lighten($primary-color, $lighten),
+    darken: darken($primary-color, $darken),
+  ),
+  secondary: (
+    base: $secondary-color,
+    light: lighten($secondary-color, $lighten),
+    darken: darken($secondary-color, $darken),
+  ),
+  tertiary: (
+    base: $tertiary-color,
+    light: lighten($tertiary-color, $lighten),
+    darken: darken($tertiary-color, $darken),
+  ),
+  ruby: (
+    base: $ruby-color,
+    light: lighten($ruby-color, $lighten),
+    darken: darken($ruby-color, $darken),
+  ),
+  oceanic: (
+    base: $oceanic-color,
+    light: lighten($oceanic-color, $lighten),
+    darken: darken($oceanic-color, $darken),
+  ),
+  cobalt: (
+    base: $cobalt-color,
+    light: lighten($cobalt-color, $lighten),
+    darken: darken($cobalt-color, $darken),
+  ),
+  blank: (
+    base: $blank-color,
+    light: lighten($blank-color, $lighten),
+    darken: darken($blank-color, $darken),
+  )
+);
+
+@function color($base, $shade: base) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}

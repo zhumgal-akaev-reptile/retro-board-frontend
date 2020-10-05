@@ -1,34 +1,28 @@
+@import '../colors';
+$card-height: 80px;
 
-.drag-container {
-  margin: 20px;
+.drag-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  overflow-y: auto;
 }
 
-.drag-list {
+.fieldset {
+  border: none;
+  background: color(cobalt, light);
+}
 
+.legend {
+  color: color(cobalt, darken);
+}
+
+.example-list {
+  height: 100%;
 }
 
 .drag-box {
-  height: 100px;
-  display: flex;
-  width: 100%;
-  border: solid 1px #ccc;
-  border-radius: 4px;
-  z-index: 1;
-  cursor: move;
-  padding: 10px 15px;
-  background: #fff;
-  color: rgba(0, 0, 0, 0.87);
-  flex-direction: column;
-  box-sizing: border-box;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-  0 2px 2px 0 rgba(0, 0, 0, 0.14),
-  0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-.drag-box:active {
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-  0 8px 10px 1px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  height: $card-height;
 }
 
 .cdk-drag-preview {
@@ -39,14 +33,21 @@
   0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
-.cdk-drag-placeholder {
-  opacity: 0;
-}
-
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.drag-list.cdk-drop-list-dragging .drag-box:not(.cdk-drag-placeholder) {
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.drag-placeholder {
+  background: color(blank, light);
+  border: dotted 2px color(blank, darken);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  min-height: 60px;
 }

@@ -2,3 +2,71 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$margin: (
+  xsmall: 10px,
+  xsmallM: 10px,
+
+  small: 20px,
+  smallM: 16px,
+
+  normal: 40px,
+  normalM: 30px,
+
+  large: 60px,
+  largeM: 40px,
+
+  xlarge: 80px,
+  xlargeM: 60px,
+);
+
+$paddings: (
+  xsmall: 10px,
+  xsmallM: 10px,
+
+  small: 20px,
+  smallM: 16px,
+
+  normal: 40px,
+  normalM: 30px,
+
+  large: 60px,
+  largeM: 40px,
+
+  xlarge: 80px,
+  xlargeM: 60px,
+);
+
+$sizes: (
+  '-xs': 'xsmall',
+  '-s': small,
+  '': normal,
+  '-l': large,
+  '-xl': 'xlarge',
+);
+
+$sides: (
+  '': (''),
+  t: ('-top'),
+  l: ('-left'),
+  r: ('-right'),
+  b: ('-bottom'),
+  v: ('-top', '-bottom'),
+  h: ('-left', '-right'),
+);
+
+@each $sideKey, $sidesArray in $sides {
+  @each $sizeKey, $size in $sizes {
+    .mr-#{$sideKey}#{$sizeKey} {
+      @each $side in $sidesArray {
+        margin#{$side}: map-get($map: $margin, $key: $size);
+      }
+    }
+
+    .pd-#{$sideKey}#{$sizeKey} {
+      @each $side in $sidesArray {
+        padding#{$side}: map-get($map: $paddings, $key: $size);
+      }
+    }
+  }
+}

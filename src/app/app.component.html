@@ -1,48 +1,56 @@
 <main>
-  <mat-grid-list cols="3" rowHeight="3:1.3" class="drag-container" gutterSize="1rem">
-
-    <mat-grid-tile
-      cdkDropList
-      #iLike="cdkDropList"
-      [cdkDropListData]="getTicketsByStatus(ticketStatus.I_LIKE)"
-      [cdkDropListConnectedTo]="[iWish, whatIf]"
-      class="drag-list"
-      (cdkDropListDropped)="drop($event)">
-      <mat-grid-tile-header>I Like</mat-grid-tile-header>
-      <div class="drag-box" *ngFor="let ticket of getTicketsByStatus(ticketStatus.I_LIKE)" cdkDrag>
-        <h3>{{ticket.title}}</h3>
-        <p>{{ticket.description}}</p>
+  <div class="drag-group">
+    <fieldset class="fieldset">
+      <div class="pd-v-xs"><b class="legend">I LIKE</b></div>
+      <div
+        #iLike="cdkDropList"
+        [cdkDropListConnectedTo]="[iWish, whatIf]"
+        cdkDropList
+        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.I_LIKE]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        cdkDropListOrientation="horizontal">
+        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.I_LIKE]" class="drag-box mr-v-xs" cdkDrag>
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          <p class="mat-body-strong">{{ ticket.title }}</p>
+          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
+        </mat-card>
       </div>
-    </mat-grid-tile>
-
-
-    <mat-grid-tile
-      cdkDropList
-      #iWish="cdkDropList"
-      [cdkDropListData]="getTicketsByStatus(ticketStatus.I_WISH)"
-      [cdkDropListConnectedTo]="[iLike, whatIf]"
-      class="drag-list"
-      (cdkDropListDropped)="drop($event)">
-      <mat-grid-tile-header>I Wish</mat-grid-tile-header>
-      <div class="drag-box" *ngFor="let ticket of getTicketsByStatus(ticketStatus.I_WISH)" cdkDrag>
-        <h3>{{ticket.title}}</h3>
-        <p>{{ticket.description}}</p>
+    </fieldset>
+    <fieldset class="fieldset">
+      <div class="pd-v-xs"><b class="legend">I WISH</b></div>
+      <div
+        #iWish="cdkDropList"
+        [cdkDropListConnectedTo]="[iLike, whatIf]"
+        cdkDropList
+        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.I_WISH]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        cdkDropListOrientation="horizontal">
+        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.I_WISH]" class="drag-box mr-v-xs" cdkDrag>
+          <div class="drag-placeholder" *cdkDragPlaceholder></div>
+          <p class="mat-body-strong">{{ ticket.title }}</p>
+          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
+        </mat-card>
       </div>
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      cdkDropList
-      #whatIf="cdkDropList"
-      [cdkDropListData]="getTicketsByStatus(ticketStatus.WHAT_IF)"
-      [cdkDropListConnectedTo]="[iLike, iWish]"
-      class="drag-list"
-      (cdkDropListDropped)="drop($event)">
-      <mat-grid-tile-header>What If</mat-grid-tile-header>
-      <div class="drag-box" *ngFor="let ticket of getTicketsByStatus(ticketStatus.WHAT_IF)" cdkDrag>
-        <h3>{{ticket.title}}</h3>
-        <p>{{ticket.description}}</p>
+    </fieldset>
+    <fieldset class="fieldset">
+      <div class="pd-v-xs"><b class="legend">WHAT IF</b></div>
+      <div
+        #whatIf="cdkDropList"
+        [cdkDropListConnectedTo]="[iLike, iWish]"
+        cdkDropList
+        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.WHAT_IF]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+        cdkDropListOrientation="horizontal">
+        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.WHAT_IF]" class="drag-box mr-v-xs" cdkDrag>
+          <div class="drag-placeholder mr-v-xs" *cdkDragPlaceholder></div>
+          <p class="mat-body-strong">{{ ticket.title }}</p>
+          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
+        </mat-card>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </fieldset>
+  </div>
 </main>
 <router-outlet></router-outlet>
