@@ -9,6 +9,11 @@ import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { TicketService } from './ticket.service'
 import { HttpClientModule } from '@angular/common/http'
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { TicketDialogModule } from '../ticket-dialog/ticket-dialog.module';
+import { BreakpointObserverService } from './breakpoint-observer.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -21,9 +26,13 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserAnimationsModule,
     DragDropModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    MatButtonModule,
+    TicketDialogModule,
+    MatSnackBarModule,
   ],
-  providers: [TicketService],
+  providers: [TicketService, BreakpointObserverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

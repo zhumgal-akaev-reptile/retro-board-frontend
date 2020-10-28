@@ -1,10 +1,17 @@
 @import '../colors';
 $card-height: 80px;
 
+.content {
+  min-height: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+}
+
 .drag-group {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -50,4 +57,10 @@ $card-height: 80px;
   border: dotted 2px color(blank, darken);
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 60px;
+}
+
+.btn-add {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }

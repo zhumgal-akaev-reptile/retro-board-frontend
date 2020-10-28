@@ -1,0 +1,15 @@
+@import '../mixins';
+
+.full-width {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  @include mobile {
+    position: fixed;
+    bottom: 24px;
+    width: 85%;
+  }
+}

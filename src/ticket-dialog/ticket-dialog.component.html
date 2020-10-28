@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <h1 mat-dialog-title>Create Ticket</h1>
+  <div mat-dialog-content>
+    <mat-form-field class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" formControlName="title">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let option of typeOptions" [value]="option.value">{{ option.label }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="actions">
+    <button mat-button (click)="close()">Cancel</button>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="submit()" [disabled]="form.invalid">Create</button>
+  </div>
+</form>
