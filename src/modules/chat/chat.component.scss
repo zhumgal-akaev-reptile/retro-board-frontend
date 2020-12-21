@@ -1,0 +1,16 @@
+@import '../../themes';
+
+::ng-deep {
+  nb-layout.message-layout .layout {
+    min-height: calc(100vh - 172px);
+  }
+  nb-layout.message-layout .layout .layout-container .content .columns nb-layout-column {
+    padding: 0;
+  }
+}
+
+.message-input {
+  border: 0.0625rem solid nb-theme(color-basic-1100);
+  border-radius: 0.25rem;
+}
+

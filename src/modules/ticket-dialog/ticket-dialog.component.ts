@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TICKET_TYPES } from '../models/ticket.model';
+import { TICKET_TYPES } from '../ticket/ticket.model';
 import { FormGroup } from '@angular/forms';
 
 export interface TicketDialogData {

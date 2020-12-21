@@ -1,9 +1,22 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
 @import 'mixins';
-@import '~@angular/material/theming';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-input-element {
+  color: white !important;
+}
 
 $margin: (
   xsmall: 10px,
@@ -71,8 +84,4 @@ $sides: (
       }
     }
   }
-}
-
-.snack-error {
-  background: mat-color($mat-red, 300);
 }

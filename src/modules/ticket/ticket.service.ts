@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
-import { Ticket, TICKET_TYPES, TicketForm } from '../models/ticket.model';
+import { Ticket, TICKET_TYPES, TicketForm } from './ticket.model';
 import { Observable } from 'rxjs';
 
 @Injectable()

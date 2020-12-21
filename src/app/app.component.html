@@ -1,59 +1,10 @@
-<main class="content">
-  <div class="drag-group">
-    <fieldset class="fieldset">
-      <div class="pd-v-xs"><b class="legend">I LIKE</b></div>
-      <div
-        #iLike="cdkDropList"
-        [cdkDropListConnectedTo]="[iWish, whatIf]"
-        cdkDropList
-        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.I_LIKE]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event, ticketStatus.I_LIKE)"
-        cdkDropListOrientation="horizontal">
-        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.I_LIKE]" class="drag-box mr-v-xs" cdkDrag>
-          <div class="drag-placeholder" *cdkDragPlaceholder></div>
-          <p class="mat-body-strong">{{ ticket.title }}</p>
-          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
-        </mat-card>
-      </div>
-    </fieldset>
-    <fieldset class="fieldset">
-      <div class="pd-v-xs"><b class="legend">I WISH</b></div>
-      <div
-        #iWish="cdkDropList"
-        [cdkDropListConnectedTo]="[iLike, whatIf]"
-        cdkDropList
-        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.I_WISH]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event, ticketStatus.I_WISH)"
-        cdkDropListOrientation="horizontal">
-        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.I_WISH]" class="drag-box mr-v-xs" cdkDrag>
-          <div class="drag-placeholder" *cdkDragPlaceholder></div>
-          <p class="mat-body-strong">{{ ticket.title }}</p>
-          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
-        </mat-card>
-      </div>
-    </fieldset>
-    <fieldset class="fieldset">
-      <div class="pd-v-xs"><b class="legend">WHAT IF</b></div>
-      <div
-        #whatIf="cdkDropList"
-        [cdkDropListConnectedTo]="[iLike, iWish]"
-        cdkDropList
-        [cdkDropListData]="ticketsGroupedByStatus[ticketStatus.WHAT_IF]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event, ticketStatus.WHAT_IF)"
-        cdkDropListOrientation="horizontal">
-        <mat-card *ngFor="let ticket of ticketsGroupedByStatus[ticketStatus.WHAT_IF]" class="drag-box mr-v-xs" cdkDrag>
-          <div class="drag-placeholder mr-v-xs" *cdkDragPlaceholder></div>
-          <p class="mat-body-strong">{{ ticket.title }}</p>
-          <mat-card-subtitle>{{ ticket.description }}</mat-card-subtitle>
-        </mat-card>
-      </div>
-    </fieldset>
-  </div>
-  <button mat-fab color="accent" class="btn-add" (click)="openDialog()">
-    <mat-icon>add</mat-icon>
-  </button>
-</main>
-<router-outlet></router-outlet>
+<nb-layout class="main-layout">
+  <nb-layout-header subheader>
+    Chat
+  </nb-layout-header>
+
+  <nb-sidebar [containerFixed]="false">Sidebar</nb-sidebar>
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>
