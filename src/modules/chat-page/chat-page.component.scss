@@ -1,0 +1,32 @@
+@import '../../themes';
+
+::ng-deep {
+  nb-layout.message-layout .layout .layout-container .content .columns nb-layout-column {
+    padding: 0;
+  }
+  nb-layout .layout .layout-container .content .columns nb-layout-column.list-column {
+    padding: 2.25rem 0 0.75rem;
+  }
+}
+
+.message-footer {
+  border: 0.0625rem solid nb-theme(color-basic-1100);
+  border-radius: 0.25rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__input {
+    border: transparent;
+    background: transparent;
+    color: white;
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.contacts {
+  margin: 20px 0;
+}

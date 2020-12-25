@@ -14,6 +14,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+input {
+  outline: none;
+}
+
 .mat-input-element {
   color: white !important;
 }

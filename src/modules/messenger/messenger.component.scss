@@ -1,3 +1,47 @@
 .messenger {
   height: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__connections {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    display: flex;
+  }
+}
+
+nb-card.messenger {
+  border: none;
+}
+
+.message-input {
+  background-color: transparent;
+  border: transparent;
+  outline: none;
+  color: white;
+  width: 100%;
+}
+
+[nbInput].message-input:hover {
+  background-color: transparent;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: space-between;
+
+  &__icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
 }

@@ -1,9 +1,21 @@
 <nb-card class="messenger">
-  <nb-card-header>
-    <h4>Lorem Ipsum</h4>
-    <p>Developer</p>
+  <nb-card-header class="messenger__header">
+    <nb-user size="large" name="John Doe" title="Engineer"></nb-user>
+    <div class="messenger__connections">
+      <nb-icon icon="phone-outline" status="primary"></nb-icon>
+      <nb-icon icon="video-outline" status="primary"></nb-icon>
+      <nb-icon icon="more-vertical-outline" status="primary"></nb-icon>
+    </div>
   </nb-card-header>
   <nb-card-body>
     Messages
   </nb-card-body>
+  <nb-card-footer class="messenger__footer">
+    <input type="text" placeholder="Type something..." class="message-input">
+    <div class="actions">
+      <nb-icon icon="attach" class="actions__icon" status="primary"></nb-icon>
+      <nb-icon icon="smiling-face" class="actions__icon" status="primary"></nb-icon>
+      <nb-icon icon="paper-plane" class="actions__icon" status="primary"></nb-icon>
+    </div>
+  </nb-card-footer>
 </nb-card>

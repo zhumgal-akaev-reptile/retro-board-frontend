@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { MessengerComponent } from './messenger.component';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbInputModule, NbUserModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [MessengerComponent],
   imports: [
-    NbCardModule
+    NbCardModule,
+    NbInputModule,
+    NbEvaIconsModule,
+    NbIconModule,
+    NbUserModule
   ],
   providers: [],
   exports: [

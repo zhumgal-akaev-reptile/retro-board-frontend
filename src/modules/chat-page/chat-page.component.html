@@ -1,0 +1,19 @@
+<nb-layout>
+  <nb-layout-column style="flex: 1" class="list-column">
+    <div class="search">
+      <nb-icon icon="search"></nb-icon>
+      <input type="text" placeholder="Search" class="search__input">
+      <nb-icon icon="options-2"></nb-icon>
+    </div>
+    <div class="contacts">
+      <app-contact-card></app-contact-card>
+    </div>
+  </nb-layout-column>
+  <nb-layout-column style="flex: 2">
+    <nb-layout class="message-layout">
+      <nb-layout-column class="message-column">
+        <app-messenger></app-messenger>
+      </nb-layout-column>
+    </nb-layout>
+  </nb-layout-column>
+</nb-layout>
