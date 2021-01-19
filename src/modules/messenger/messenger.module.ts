@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { MessengerComponent } from './messenger.component';
-import { NbCardModule, NbIconModule, NbInputModule, NbUserModule } from '@nebular/theme';
+import { NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbUserModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [MessengerComponent],
@@ -10,7 +12,11 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbInputModule,
     NbEvaIconsModule,
     NbIconModule,
-    NbUserModule
+    NbUserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    NbButtonModule
   ],
   providers: [],
   exports: [

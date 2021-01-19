@@ -8,14 +8,24 @@
     </div>
   </nb-card-header>
   <nb-card-body>
-    Messages
+    <nb-card *ngIf="wsMessage" class="message-box">
+      <nb-card-body>
+        {{ wsMessage }}
+      </nb-card-body>
+    </nb-card>
   </nb-card-body>
   <nb-card-footer class="messenger__footer">
-    <input type="text" placeholder="Type something..." class="message-input">
+    <input [formControl]="messageControl" type="text" placeholder="Type something..." class="message-input">
     <div class="actions">
-      <nb-icon icon="attach" class="actions__icon" status="primary"></nb-icon>
-      <nb-icon icon="smiling-face" class="actions__icon" status="primary"></nb-icon>
-      <nb-icon icon="paper-plane" class="actions__icon" status="primary"></nb-icon>
+      <button nbButton ghost>
+        <nb-icon icon="attach" class="actions__icon" status="primary"></nb-icon>
+      </button>
+      <button nbButton ghost>
+        <nb-icon icon="smiling-face" class="actions__icon" status="primary"></nb-icon>
+      </button>
+      <button nbButton ghost (click)="handleMessage()">
+        <nb-icon icon="paper-plane" class="actions__icon" status="primary"></nb-icon>
+      </button>
     </div>
   </nb-card-footer>
 </nb-card>

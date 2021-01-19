@@ -34,6 +34,13 @@ nb-card.messenger {
   background-color: transparent;
 }
 
+.message-box {
+  display: block;
+  padding: 5px 0;
+  border: none;
+  margin-left: auto;
+}
+
 .actions {
   display: flex;
   align-items: center;

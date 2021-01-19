@@ -23,7 +23,7 @@ export class WebsocketService {
     })
   }
 
-  emit(eventName: string, data: any ) {
+  emit<T>(eventName: string, data: T) {
     this.socket.emit(eventName, data)
   }
 }
